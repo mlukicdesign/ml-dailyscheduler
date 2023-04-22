@@ -1,10 +1,7 @@
-// Wrap all code that interacts with the DOM in a call to jQuery to ensure that
-// the code isn't run until the browser has finished rendering all the elements
-// in the html.
 
 $(function () {
-
   
+ 
   var today = dayjs();
   $('#currentDay').text(today.format('MMM D, YYYY'));
   
@@ -22,15 +19,41 @@ $(function () {
     } else {
       $(this).addClass("future");
     }
+  
+});
 
-    console.log(this)
 
+// Target all the input fields
+const inputFields = document.querySelectorAll('.description');
+
+// Loop through each input field, retrieve Id and set its value from local storage
+inputFields.forEach(input => {
+  const timeBlockId = input.parentNode.getAttribute('id');
+  const userInput = localStorage.getItem(timeBlockId);
+
+  if (userInput) {
+    input.value = userInput;
+  }
+
+});
+
+
+
+const saveButtons = $('.saveBtn');
+
+// Loop through each save button and add a click event listener
+saveButtons.each(function() {
+  $(this).click(function() {
+    // Get the user input from the input field in the same time-block as the button
+    const userInput = $(this).parent().find('textarea').val();
+
+    // Get the id of the containing time-block
+    const timeBlockId = $(this).parent().attr('id');
+
+    // Save the user input in local storage using the time-block id as a key value pair
+    localStorage.setItem(timeBlockId, userInput);
   });
-
-  
-
-  
-
+});
 
   
   // TODO: Add a listener for click events on the save button. This code should
