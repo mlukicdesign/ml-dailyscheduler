@@ -3,7 +3,7 @@ $(function () {
   
  
   var today = dayjs();
-  $('#currentDay').text(today.format('MMM D, YYYY'));
+  $('#currentDay').text(today.format('MMM D, YYYY h:mm A'));
   
   
   const currentHour = dayjs().hour();
@@ -54,6 +54,16 @@ saveButtons.each(function() {
     localStorage.setItem(timeBlockId, userInput);
   });
 });
+
+//clear localstorage 
+
+const clearBtn = $('#clearschedule')
+
+$(clearBtn).click(function() {
+  localStorage.clear();
+  location.reload();
+});
+
 
   
   // TODO: Add a listener for click events on the save button. This code should
