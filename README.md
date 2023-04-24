@@ -10,7 +10,7 @@ https://mlukicdesign.github.io/ml-dailyscheduler/
 
 Screenshot of the project below:
 
-<img src="./assets/screenshot_project.png">
+<img src="assets/screenshot_project.png">
 
 
 This project utilises Jquery and the Day.js api to create a simple calendar application to schedule your work day. 
