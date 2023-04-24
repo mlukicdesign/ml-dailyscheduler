@@ -6,7 +6,7 @@
 
 Link to project here:
 
-
+https://mlukicdesign.github.io/ml-dailyscheduler/
 
 Screenshot of the project below:
 
@@ -19,3 +19,4 @@ Each 'time-block' has an associated id that allows a conditional statement to ap
 
 Each save button has an event listen to store the users input data in the local storage. This way it can be accessed even if the browser is closed. Another button has been included to clear the data if a new day has begun. 
 
+Some custom styling has been added for my own personal taste!
